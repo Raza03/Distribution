@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_gravity="center"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/White"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:baselineAligned="false"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:weightSum="100">
+
+        <ListView
+
+            android:id="@+id/myListview"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="80">
+
+        </ListView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_weight="20"
+    android:weightSum="2">
+
+<TextView
+    android:id="@+id/txtTotal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Total"
+    android:gravity="center"
+    android:textAllCaps="true"
+    android:textStyle="bold"
+    android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/Total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2500"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:layout_weight="1"/>
+</LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:weightSum="4"
+        >
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter data"
+            android:background="@drawable/btnstyle"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/DarkBlue"
+            android:textColorHint="@color/DarkBlue"
+            android:textStyle="bold"
+            app:hintTextColor="@color/DarkBlue">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberPassword"
+                android:textColor="@color/DarkBlue"
+                android:textColorHighlight="@color/DarkBlue"
+                android:textColorHint="@color/DarkBlue"
+                android:textColorLink="@color/DarkBlue"
+                android:textCursorDrawable="@color/Transparent"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter data"
+            android:background="@drawable/btnstyle"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/DarkBlue"
+            android:textColorHint="@color/DarkBlue"
+            android:textStyle="bold"
+            app:hintTextColor="@color/DarkBlue">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberPassword"
+                android:textColor="@color/DarkBlue"
+                android:textColorHighlight="@color/DarkBlue"
+                android:textColorHint="@color/DarkBlue"
+                android:textColorLink="@color/DarkBlue"
+                android:textCursorDrawable="@color/Transparent"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_recipt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recipt"
+            android:background="@drawable/btnstyle"
+            android:layout_marginVertical="20dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="@color/DarkBlue"/>
+
+            <Button
+                android:id="@+id/btn_print"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Print"
+                android:layout_weight="1"
+                android:background="@drawable/btnstyle"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textColor="@color/DarkBlue"/>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
