@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_print;
     private ListView myList;
 
+    private String changes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
