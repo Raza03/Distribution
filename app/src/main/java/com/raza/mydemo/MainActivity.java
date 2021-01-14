@@ -1,9 +1,13 @@
   package com.raza.mydemo;
 
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,64 +21,89 @@ import static com.raza.mydemo.R.id.myListview;
 public class MainActivity extends AppCompatActivity {
 
 
-    private TextInputEditText edit1;
-    private TextInputEditText edit2;
-    private Button btn_recipt;
+    private TextInputEditText rate;
+    private TextInputEditText qty;
+    private Button btn_add;
     private Button btn_print;
     private ListView myList;
 
-    private String changes;
+     ArrayList <MyItemView> items = new  ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
-        AddDataInAdaptor();
+        btn_add.setVisibility(View.VISIBLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        addData();
 
 
     }
 
     private void initView() {
         myList = (ListView) findViewById(myListview);
-        edit1= (TextInputEditText) findViewById(R.id.edit1);
-        edit2= (TextInputEditText) findViewById(R.id.edit2);
-        btn_recipt= (Button) findViewById(R.id.btn_recipt);
+        rate= (TextInputEditText) findViewById(R.id.edit1);
+        qty= (TextInputEditText) findViewById(R.id.edit2);
+        btn_add= (Button) findViewById(R.id.btn_add);
         btn_print = (Button) findViewById(R.id.btn_print);
 
     }
 
     public void AddDataInAdaptor(){
 
-        MyItemView item0 = new MyItemView("300*9");
-        MyItemView item1 = new MyItemView("300*2");
-        MyItemView item2 = new MyItemView("300*8");
-        MyItemView item3 = new MyItemView("300*5");
-        MyItemView item4 = new MyItemView("300*7");
-        MyItemView item5 = new MyItemView("300*9");
-        MyItemView item6 = new MyItemView("300*9");
-        MyItemView item7 = new MyItemView("300*9");
-        MyItemView item8 = new MyItemView("300*9");
-        MyItemView item9 = new MyItemView("300*9");
+        String finalrate= rate.getText().toString();
+        String finalqty= qty.getText().toString();
 
+       if (TextUtils.isEmpty(finalrate))
+            {
+                rate.setError("Kindly Enter rate");
+                return;
+            }
+       else if (TextUtils.isEmpty(finalqty))
+            {
+                qty.setError("Kindly Enter Quantity");
+                return;
+            }
+       else
+           {
+               rate.setError(null);
+               qty.setError(null);
+               rate.setText("");
+               qty.setText("");
+               Toast.makeText(this, "Task Sucessfull", Toast.LENGTH_SHORT).show();
+           }
 
+       // int subtotal = finalrate * finalqty;
 
-        ArrayList <MyItemView> items = new  ArrayList<>();
+         MyItemView item0 = new MyItemView(finalrate,finalqty);
+
 
         items.add(item0);
-        items.add(item1);
-        items.add(item2);
-        items.add(item3);
-        items.add(item4);
-        items.add(item5);
-        items.add(item6);
-        items.add(item7);
-        items.add(item8);
-        items.add(item9);
 
 
 
     ListViewAdaptor adaptor = new ListViewAdaptor(this,R.layout.customlayoutfile,items);
     myList.setAdapter(adaptor);
+
+
     }
+
+
+    public void addData(){
+        btn_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AddDataInAdaptor();
+            }
+        });
+
+
+    }
+
+
+
+
 }
