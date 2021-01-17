@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         String finalrate= rate.getText().toString();
         String finalqty= qty.getText().toString();
 
+        String item = finalrate+"  x  "+finalqty;
+
        if (TextUtils.isEmpty(finalrate))
             {
                 rate.setError("Kindly Enter rate");
@@ -78,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
        // int subtotal = finalrate * finalqty;
 
-         MyItemView item0 = new MyItemView(finalrate,finalqty);
+         MyItemView item0 = new MyItemView(item);
 
 
         items.add(item0);
